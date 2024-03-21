@@ -1,0 +1,165 @@
+.database-tabs{
+    height: 40px;
+    width: 100%;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.02);
+
+}
+.database-tabs > div {
+    padding-top: 18px;
+    width: 135px;
+    margin-right: 2px;
+    text-align: center;
+    float: left;
+    font-size: 14px;
+}
+.database-tabs > div > a{
+    text-decoration: none;
+}
+.database-tabs > div:hover {
+    color: rgba(12, 110, 252, 0.42);
+    border-bottom: 2px solid rgba(12, 110, 252, 0.42);
+}
+.database-tabs > div:active{
+    color: #0C6EFC;
+    border-bottom: 2px solid #0C6EFC;
+}
+
+.database-tabs .active {
+    color: #0C6EFC;
+    border-bottom: 2px solid #0C6EFC;
+}
+
+.container .canvas{
+    display: none;
+    width: 1240px;
+    height: 680px;
+    margin: 20px auto;
+    background: #FFFFFF;
+    box-shadow: 1px 1px 6px 0px rgba(0, 0, 0, 0.03);
+    border-radius: 4px;
+}
+
+.container .canvas.active{
+    display: block;
+}
+.target-title{
+    font-size: 16px;
+}
+
+.target .txt-target{
+    width: 49%;
+    display: inline-grid;
+}
+
+.target .feature-target{
+    width: 49%;
+    display: inline-grid;
+}
+
+.target .tdms-target{
+    width: 99%;
+    display: inline-grid;
+}
+
+.target input{
+    width: 100%;
+}
+
+.target-table tbody {
+    display:block;
+    height:250px;
+    width:100%;
+    overflow-y:scroll;
+    text-align: center;
+}
+
+.target-table thead,.target-table tbody tr {
+    display:table;
+    width:100%;
+    table-layout:fixed;
+}
+
+.target-table thead {
+    background: #EDEFF3;
+    width:100%;
+    color: black;
+}
+.target-table thead tr th{
+    text-align: center;
+    width:100%;
+}
+
+.query-row{
+    height: 70px;
+    padding: 20px 0 10px 20px;
+}
+.query-row .canvas-tab2-label{
+    float: left;
+}
+.query-row .canvas-tab2-value{
+    float: left;
+    margin-right: 20px;
+}
+.date-begin{
+    display: inline-block;
+    width: 200px;
+}
+.date-end{
+    display: inline-block;
+    width: 200px;
+    margin-right: 20px;
+}
+.data-area-line{
+    display: inline-block;
+    width: 50px;
+    height: 2px;
+    background-color: #0f0f0f;
+}
+
+.table-view{
+    width: 1200px;
+    height: 530px;
+    margin: 20px auto;
+    border-radius: 10px;
+    overflow: auto;
+}
+
+.table-body{
+    height: 500px;
+    overflow-y: auto;
+}
+
+.table-view .table-body > tr > td{
+    word-break: break-all;
+    word-wrap:break-word;
+}
+
+/*待发送*/
+.status.status-ready{
+    color: #9f8658;
+}
+/*已发送*/
+.status.status-success{
+    color: #00A94F;
+}
+/*格式错误*/
+.status.status-format-error{
+    color: #a96344;
+}
+/*超出长度*/
+.status.status-beyond-max-length{
+    color: #8541c4;
+}
+/*低于最低发送时间间隔*/
+.status.status-beyond-min-interval{
+    color: #372270;
+}
+/*无数据权限*/
+.status.status-no-permission{
+    color: #9b0c94;
+}
+/*未知*/
+.status.status-unknown{
+    color: gray;
+}

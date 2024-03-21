@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html th:fragment="frag (id)">
+  <div class="page-unit">
+    <div class="page-unit-item text">共<i class="page-count" >- -</i>条,</div>
+    <div class="page-unit-item text">当前<i class="page-num" >- -</i>/<i class="pages" >- -</i>页,</div>
+    <div class="page-unit-item select">每页
+      <select th:onchange="changePageSize([[${id}]],this.value)">
+        <option value="3" >3</option>
+        <option value="5" >5</option>
+        <option value="10">10</option>
+        <option value="20" selected>20</option>
+        <option value="50">50</option>
+      </select>条&emsp;
+    </div>
+    <ul class="pagination pagination-sm page-select">
+    </ul>
+  </div>
+  <script type="text/javascript">
+    function lastPage(id){
+      let pageNum = $(`#${id} .query-row > input[name='pageNum']`).val();
+      pageNum = eval(pageNum +'-1');
+      $(`#${id} .query-row  > input[name='pageNum']`).val(pageNum);
+      $(`#${id} .query-row  .submit`).click();
+    }
+    function nextPage(id){
+      let pageNum = $(`#${id} .query-row > input[name='pageNum']`).val();
+      pageNum = eval(pageNum + '+1');
+      $(`#${id} .query-row  > input[name='pageNum']`).val(pageNum);
+      $(`#${id} .query-row  .submit`).click();
+    }
+
+    function currentPage(id,pageIndex){
+      $(`#${id} .query-row  > input[name='pageNum']`).val(pageIndex);
+      $(`#${id} .query-row  .submit`).click();
+    }
+
+    function changePageSize(id,pageSize){
+      console.log(id);
+      $(`#${id} .query-row  > input[name='pageSize']`).val(pageSize);
+      $(`#${id} .query-row  .submit`).click();
+    }
+  </script>
+</html>

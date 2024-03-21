@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="shortcut icon" th:href="@{'/img/logo.ico'}">
+    <link th:href="@{'css/bootstrap.min.css'}" rel="stylesheet"/>
+    <link th:href="@{'css/index.css'}" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+    <div class="starter-login">
+        <div class="login-title">
+            <div class="title-main">supervisory system</div>
+            <div class="title-sub">设备云平台数据传输辅助系统</div>
+        </div>
+        <div class="login-form">
+            <div class="form-title">登录</div>
+            <div class="form-line"></div>
+            <form id="loginForm" class="form-body" action="/doLogin" method="POST">
+                <label class="form-label-username">用户名</label>
+                <input type="text" name="username"/>
+                <label class="form-label-password">密码</label>
+                <input type="password" class="form-input-password" name="password" placeholder="请输入密码"/>
+            </form>
+            <div class="col-sm-12 mx-auto text-center"
+                 th:with="exp=${#request.session.getAttribute('SPRING_SECURITY_LAST_EXCEPTION')}">
+                <p th:if="${exp}" th:text="${exp.message}" class="text-danger font-size-x-small"></p>
+            </div>
+            <button type="button" class="form-btn-submit" onclick="submit()"><span
+                    class="glyphicon glyphicon-arrow-right"></span></button>
+        </div>
+    </div>
+
+</div>
+<script type="application/javascript">
+    function submit() {
+        document.getElementById('loginForm').submit()
+    }
+</script>
+</body>
+</html>

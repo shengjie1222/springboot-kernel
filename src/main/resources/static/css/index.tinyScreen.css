@@ -1,0 +1,60 @@
+body { padding-top: 1vh; background: #ffffff; }
+.container {
+    padding-top: 50px;
+    border: 1px solid green;
+}
+nav[role=navigation] .container-fluid{width: 100%; position: relative;padding-right: 5%;height: 5vh;}
+nav[role=navigation] .container-fluid .navbar-header { padding-top: 0; height: 100%;}
+nav[role=navigation] .container-fluid .navbar-header .logo{ float:left;height: 100%; }
+nav[role=navigation] .container-fluid .utility-nav{
+    position: absolute;
+    top: 0;
+    right: 20px;
+    z-index: 9;
+}
+nav[role=navigation] .utility-nav>ul {list-style: none;}
+nav[role=navigation] .utility-nav>ul>li {
+    float: left;
+    display: inline-block;
+    padding: 8px 12px;
+    color: #132e5f;
+}
+.starter-template {
+    height: 90vh;
+    line-height: normal;
+    text-align: center;
+}
+.head-line{
+    height: 6vh;
+    line-height: 6vh;
+    background-image: linear-gradient(to right, #a1c4fd 0%, #c2e9fb 51%, #a1c4fd 100%);
+    box-shadow: 0 0 20px #eee;
+    border-radius: 1vh;
+    margin: 1vh;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.head-line .head-line-unit{
+    display: inline;
+    padding: 0 1vw;
+}
+.head-line-unit.card-number{
+    float: left;
+}
+.head-line-unit.amount-wait{
+    float: right;
+}
+.head-line-unit .head-line-number{
+   font-size: 1.6rem;
+}
+
+

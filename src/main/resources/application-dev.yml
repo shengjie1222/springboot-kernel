@@ -1,0 +1,25 @@
+server:
+  # 应用服务 WEB 访问端口
+  port: 8080
+spring:
+  #************H2  Begin****************
+  datasource:
+    #指定Driver，有了Driver才能访问数据库
+    driver-class-name: org.h2.Driver
+    #用户名密码不需要改，都是临时值
+    username: 'root'
+    password: '123456'
+    #指定数据库的种类，这里 file意思是文件型数据库
+    url: jdbc:h2:file:~\kernel\database
+
+web:
+  socket:
+    port: 7399
+
+
+netty:
+  socket:
+    # Websocket服务端口
+    port: 6679
+    # 消息帧最大体积
+    max-frame-size: 10240

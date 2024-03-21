@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<nav class="navbar-main" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" th:href="@{'/index'}">
+        <div class="brand-main">supervisory system</div>
+        <div class="brand-sub">设备云平台数据传输辅助系统</div>
+      </a>
+    </div>
+    <div class="navbar-body">
+      <ul class="nav navbar-nav">
+        <li th:class="${#strings.contains(#request.requestURL,'/index')?'active':'none'}"><a th:href="@{'/index'}">传输状态</a></li>
+        <li th:class="${#strings.contains(#request.requestURL,'/diskIndex')?'active':'none'}"><a th:href="@{'/diskIndex'}">存储状态</a></li>
+        <li th:class="${#strings.contains(#request.requestURL,'/databaseIndex')?'active':'none'}"><a th:href="@{'/databaseIndex'}">数据库</a></li>
+        <li th:class="${#strings.contains(#request.requestURL,'/settingIndex')?'active':'none'}"><a th:href="@{'/settingIndex'}">常用设置</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            帮助
+            <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="#">版本：v2.2.2</a></li>
+            <li class="divider"></li>
+            <li><a href="http://182.92.82.74/" target="_blank">设备状态监测智能云中心</a></li>
+            <li><a href="#">日期：2023/08/01</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="utility-nav">
+      <ul>
+        <li>欢迎您：<span sec:authentication="name"></span></li>
+        <li><a href="/logout" title="退出">
+          <span class="glyphicon glyphicon-log-out"></span>退出
+        </a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</html>
